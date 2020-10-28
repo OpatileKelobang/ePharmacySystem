@@ -2,15 +2,14 @@ package com.digital.epharmacy.service.PharmacyBankAccountInformation.impl;
 
 
 import com.digital.epharmacy.controller.ExceptionHandler.MyCustomExceptionHandler;
-import com.digital.epharmacy.entity.Pharmacy.Pharmacy;
 import com.digital.epharmacy.entity.Pharmacy.PharmacyBankAccountInformation;
 import com.digital.epharmacy.repository.PharmacyBankAccountInformation.PharmacyBankAccountInformationRepository;
-import com.digital.epharmacy.repository.PharmacyBankAccountInformation.Impl.PharmacyBankAccountInformationImpl;
-import com.digital.epharmacy.service.Pharmacy.PharmacyService;
 import com.digital.epharmacy.service.PharmacyBankAccountInformation.PharmacyBankAccountInformationService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.Set;
+import java.util.stream.Collectors;
 
 /*
  * Author: Opatile Kelobang
@@ -21,46 +20,50 @@ import java.util.Set;
 @Service
 public class PharmacyBankAccountInformationServiceImpl implements PharmacyBankAccountInformationService {
 
-    public static PharmacyBankAccountInformationService service = null;
+    @Autowired
     private PharmacyBankAccountInformationRepository repository;
-
-    private PharmacyBankAccountInformationServiceImpl(){
-        this.repository = PharmacyBankAccountInformationImpl.getRepository();
-    }
-
-    public static PharmacyBankAccountInformationService getService(){
-        if (service == null) service = new PharmacyBankAccountInformationServiceImpl();
-        return service;
-    }
 
 
     @Override
     public Set<PharmacyBankAccountInformation> getAll() {
-        return this.repository.getAll();
+        return this.repository.findAll().stream().collect(Collectors.toSet());
     }
 
     @Override
     public PharmacyBankAccountInformation create(PharmacyBankAccountInformation pharmacyBankAccountInformation) {
         try{
-            return this.repository.create(pharmacyBankAccountInformation);
+            return this.repository.save(pharmacyBankAccountInformation);
         } catch (Exception e){
-            throw new MyCustomExceptionHandler("Pharmacy '" + pharmacyBankAccountInformation.getPharmacyID() + "' already exists");
+            throw new MyCustomExceptionHandler("Pharmacy '" + pharmacyBankAccountInformation.getBankAccountId() + "' already exists");
         }
 
     }
 
     @Override
     public PharmacyBankAccountInformation read(String pharmacyBankAccountInformation) {
-        return this.repository.read(pharmacyBankAccountInformation);
+        return this.repository.findById(pharmacyBankAccountInformation).orElseGet(null);
     }
 
     @Override
     public PharmacyBankAccountInformation update(PharmacyBankAccountInformation pharmacyBankAccountInformation) {
-        return this.repository.update(pharmacyBankAccountInformation);
+        return this.repository.save(pharmacyBankAccountInformation);
     }
 
     @Override
     public boolean delete(String pharmacyBankAccountInformation) {
-        return this.repository.delete(pharmacyBankAccountInformation);
+        this.repository.deleteById(pharmacyBankAccountInformation);
+        if (this.repository.existsById(pharmacyBankAccountInformation))
+            return false;
+        return true;
+    }
+
+    @Override
+    public PharmacyBankAccountInformation findByAccountNumber(int accountNumber) {
+        PharmacyBankAccountInformation bankDetails = repository.findByAccountNumber(accountNumber);
+
+        if (bankDetails == null)
+            throw new MyCustomExceptionHandler("Bank account does not exist");
+
+        return bankDetails;
     }
 }

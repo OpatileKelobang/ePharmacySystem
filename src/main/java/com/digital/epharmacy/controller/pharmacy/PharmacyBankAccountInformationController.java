@@ -39,7 +39,6 @@ public class PharmacyBankAccountInformationController {
 
         PharmacyBankAccountInformation newBankInfo = PharmacyBankAccountInformationFactory
                 .createPharmacyBankAccountInformation(
-                        bankinfo.getPharmacyID(),
                         bankinfo.getBankName(),
                         bankinfo.getAccountNumber(),
                         bankinfo.getBranchCode(),

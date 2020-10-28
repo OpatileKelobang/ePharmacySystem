@@ -1,4 +1,4 @@
-package com.digital.epharmacy.repository.PharmacyBankAccountInformation.Impl;
+/*package com.digital.epharmacy.repository.PharmacyBankAccountInformation.Impl;
 
 import com.digital.epharmacy.entity.Pharmacy.PharmacyBankAccountInformation;
 import com.digital.epharmacy.factory.Pharmacy.PharmacyBankAccountInformationFactory;
@@ -9,14 +9,15 @@ import org.junit.Test;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
-import org.junit.runners.MethodSorters;
+import org.junit.runners.MethodSorters;*/
 
 import static org.junit.Assert.*;
+/*
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class PharmacyBankAccountInformationServiceImplTest {
 
-    private static PharmacyBankAccountInformationRepository repository = PharmacyBankAccountInformationImpl.getRepository();
+
     private static PharmacyBankAccountInformation bankAccountInformation = PharmacyBankAccountInformationFactory
             .createPharmacyBankAccountInformation("Pharm2001",
                     "Standard Bank South Africa",
@@ -65,4 +66,4 @@ public class PharmacyBankAccountInformationServiceImplTest {
     public void d_getAll() {
         System.out.println("Get All: " + repository.getAll());
     }
-}
+}*/

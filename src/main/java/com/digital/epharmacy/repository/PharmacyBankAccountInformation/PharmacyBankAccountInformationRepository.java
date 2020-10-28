@@ -7,10 +7,9 @@ package com.digital.epharmacy.repository.PharmacyBankAccountInformation;
  */
 
 import com.digital.epharmacy.entity.Pharmacy.PharmacyBankAccountInformation;
-import com.digital.epharmacy.repository.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-import java.util.Set;
 
-public interface PharmacyBankAccountInformationRepository extends Repository<PharmacyBankAccountInformation, String> {
-    Set<PharmacyBankAccountInformation> getAll();
+public interface PharmacyBankAccountInformationRepository extends JpaRepository<PharmacyBankAccountInformation, String> {
+    PharmacyBankAccountInformation findByAccountNumber(int accountNumber);
 }

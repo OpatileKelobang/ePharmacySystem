@@ -1,16 +1,17 @@
-package com.digital.epharmacy.repository.PharmacyBankAccountInformation.Impl;
+/*package com.digital.epharmacy.repository.PharmacyBankAccountInformation.Impl;
 
 import com.digital.epharmacy.entity.Pharmacy.PharmacyBankAccountInformation;
 import com.digital.epharmacy.repository.PharmacyBankAccountInformation.PharmacyBankAccountInformationRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashSet;
-import java.util.Set;
+import java.util.Set;*/
 /*
  * Author: Opatile Kelobang
  * Desc: PharmacyBankAccountInformation implementation
  * Date: 29 August 2020
  */
+/*
 @Repository
 public class PharmacyBankAccountInformationImpl implements PharmacyBankAccountInformationRepository {
 
@@ -72,3 +73,4 @@ public class PharmacyBankAccountInformationImpl implements PharmacyBankAccountIn
         return this.pharmacyBankAccountInformationDB;
     }
 }
+*/
