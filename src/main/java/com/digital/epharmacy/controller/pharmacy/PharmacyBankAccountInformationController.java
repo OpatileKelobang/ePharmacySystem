@@ -50,12 +50,20 @@ public class PharmacyBankAccountInformationController {
         return new ResponseEntity<PharmacyBankAccountInformation>(bankinfo, HttpStatus.CREATED);
     }
 
-    @GetMapping("/read/{pharmacyID}")
-    public ResponseEntity<PharmacyBankAccountInformation> read(@PathVariable String pharmacyID){
-        PharmacyBankAccountInformation bankInfo = bankService.read(pharmacyID);
+    @GetMapping("/read/{bankAccountId}")
+    public ResponseEntity<PharmacyBankAccountInformation> read(@PathVariable String bankAccountId){
+        PharmacyBankAccountInformation bankInfo = bankService.read(bankAccountId);
 
         return new ResponseEntity<PharmacyBankAccountInformation>(bankInfo, HttpStatus.OK);
     }
+
+    @GetMapping("/account/{accountNumber}")
+    public ResponseEntity<PharmacyBankAccountInformation> readByAccountNumber(@PathVariable int accountNumber){
+        PharmacyBankAccountInformation bankInfo = bankService.findByAccountNumber(accountNumber);
+
+        return new ResponseEntity<PharmacyBankAccountInformation>(bankInfo, HttpStatus.OK);
+    }
+
 
     @PostMapping("/update")
     public PharmacyBankAccountInformation update(@Valid @RequestBody PharmacyBankAccountInformation bankInfo){
