@@ -1,5 +1,7 @@
 package com.digital.epharmacy.entity.Pharmacy;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -19,8 +21,10 @@ public class PharmacyBankAccountInformation {
     @NotBlank(message = "Bank name is required")
     private String bankName;
     @NotNull(message = "Account number is required")
+    @Range(min = 1, max = 2147483647, message = "Account number is required")
     private int accountNumber;
-    @NotNull(message = "Branch Code is required")
+    @NotNull(message = "Branch code is required")
+    @Range(min = 1, max = 2147483647, message = "Branch code is required")
     private int branchCode;
     @NotBlank(message = "Beneficiary Reference is required")
     private String beneficiaryReference;

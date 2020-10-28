@@ -10,6 +10,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 public class Pharmacy {
@@ -20,6 +21,9 @@ public class Pharmacy {
     @Column(unique = true)
     @NotBlank(message = "Pharmacy name is required")
     private String pharmacyName;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<PharmacyBankAccountInformation> bankAccount;
 
     protected Pharmacy(){}
 
