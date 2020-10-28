@@ -15,4 +15,5 @@ import java.util.Set;
  */
 public interface PharmacyService extends IService<Pharmacy, String> {
     Set<Pharmacy> getAll();
+    Pharmacy findPharmacyByPharmacyName(String pharmacyName);
 }

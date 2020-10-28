@@ -1,17 +1,18 @@
-package com.digital.epharmacy.repository.Pharmacy.Impl;
+/*package com.digital.epharmacy.repository.Pharmacy.Impl;
 
 import com.digital.epharmacy.entity.Pharmacy.Pharmacy;
 import com.digital.epharmacy.repository.Pharmacy.PharmacyRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashSet;
-import java.util.Set;
+import java.util.Set;*/
 /*
  * Author: Opatile Kelobang
  * Desc: Pharmacy repository implementation
  * Date: 29 August 2020
  */
 
+/*
 @Repository
 public class PharmacyRepositoryImpl implements PharmacyRepository {
     private static PharmacyRepository repository = null;
@@ -71,3 +72,4 @@ public class PharmacyRepositoryImpl implements PharmacyRepository {
         return this.pharmacyDB;
     }
 }
+*/
