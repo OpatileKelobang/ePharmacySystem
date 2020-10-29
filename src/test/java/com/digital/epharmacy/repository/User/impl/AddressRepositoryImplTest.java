@@ -1,10 +1,13 @@
+/*
 package com.digital.epharmacy.repository.User.impl;
 
+*/
 /*
  * Author: Keagan Tabisher
  * Date: 30/08/2020
  * Desc: UserProfileRepository Test, will test all methods if it does it correctly
- * */
+ * *//*
+
 
 import com.digital.epharmacy.entity.User.Address;
 import com.digital.epharmacy.factory.User.AddressFactory;
@@ -25,8 +28,10 @@ import static org.junit.Assert.assertNotEquals;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 
+*/
 
 
+/*
 public class AddressRepositoryImplTest {
     private static AddressRepository repository = new AddressRepositoryImpl();
     private static Address address = AddressFactory.createAddress("P01",
@@ -79,3 +84,4 @@ public class AddressRepositoryImplTest {
     }
 }
 
+*/
