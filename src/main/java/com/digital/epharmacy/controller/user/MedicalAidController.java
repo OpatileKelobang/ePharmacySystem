@@ -51,9 +51,16 @@ public class MedicalAidController {
         return medicalAidService.update(userId);
     }
 
-    @GetMapping("/read/{userId}")
-    public ResponseEntity<MedicalAid> read(@PathVariable String userId){
-        MedicalAid medicalAid = medicalAidService.read(userId);
+    @GetMapping("/read/{medicalAidId}")
+    public ResponseEntity<MedicalAid> read(@PathVariable String medicalAidId){
+        MedicalAid medicalAid = medicalAidService.read(medicalAidId);
+
+        return new ResponseEntity<MedicalAid>(medicalAid, HttpStatus.OK);
+    }
+
+    @GetMapping("/name/{medicalAidName}")
+    public ResponseEntity<MedicalAid> readByName(@PathVariable String medicalAidName){
+        MedicalAid medicalAid = medicalAidService.findByMedicalAidName(medicalAidName);
 
         return new ResponseEntity<MedicalAid>(medicalAid, HttpStatus.OK);
     }

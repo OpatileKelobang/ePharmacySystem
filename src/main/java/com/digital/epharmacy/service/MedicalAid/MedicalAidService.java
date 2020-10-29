@@ -11,4 +11,5 @@ import java.util.Set;
  */
 public interface MedicalAidService extends IService<MedicalAid, String> {
     Set<MedicalAid> getAll();
+    MedicalAid findByMedicalAidName(String medicalAidName);
 }

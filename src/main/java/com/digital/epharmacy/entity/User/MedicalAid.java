@@ -1,5 +1,7 @@
 package com.digital.epharmacy.entity.User;
 
+import org.hibernate.validator.constraints.Range;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -25,6 +27,7 @@ public class MedicalAid {
     @Column(name = "id")
     private String medicalAidId;
     @NotNull(message = "Medical aid number is required")
+    @Range(min = 1, max = 2147483647, message = "Medical aid number is required")
     private int userMedicalAidNumber;
     @NotBlank(message = "Medical aid scheme is required")
     private String medicalAidScheme;

@@ -14,5 +14,5 @@ import java.util.Set;
  */
 @Repository
 public interface MedicalAidRepository extends JpaRepository<MedicalAid, String> {
-
+    MedicalAid findByMedicalAidName(String medicalAidName);
 }

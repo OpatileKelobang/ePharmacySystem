@@ -28,6 +28,15 @@ public class MedicalAidServiceImpl implements MedicalAidService {
     }
 
     @Override
+    public MedicalAid findByMedicalAidName(String medicalAidName) {
+        MedicalAid newMedicalAid = repository.findByMedicalAidName(medicalAidName);
+
+        if (newMedicalAid == null)
+            throw  new MyCustomExceptionHandler("Medical aid or id does not exist");
+        return newMedicalAid;
+    }
+
+    @Override
     public MedicalAid create(MedicalAid medicalAid) {
         return this.repository.save(medicalAid);
     }
