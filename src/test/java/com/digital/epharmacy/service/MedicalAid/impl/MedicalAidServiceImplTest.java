@@ -9,7 +9,11 @@ import org.junit.Test;
 import org.junit.jupiter.api.MethodOrderer;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.TestMethodOrder;
+import org.junit.runner.RunWith;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Set;
 
@@ -19,11 +23,14 @@ import static org.junit.Assert.*;
  * Desc: MedicalAid Service implementation test
  * Date: 02 September 2020
  */
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+@SpringBootTest
+@RunWith(SpringRunner.class)
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class MedicalAidServiceImplTest {
 
-    private static MedicalAidService service = MedicalAidServiceImpl.getService();
+    @Autowired
+    private MedicalAidService service;
+
     private static MedicalAid medicalAid = MedicalAidFactory.
             createMedicalAid(
                     4005785,
@@ -43,7 +50,7 @@ public class MedicalAidServiceImplTest {
     @Order(2)
     @Test
     public void b_read() {
-        MedicalAid read = service.read(medicalAid.getUserId());
+        MedicalAid read = service.read(medicalAid.getMedicalAidId());
         System.out.println("Read: " + read);
     }
 
@@ -66,7 +73,7 @@ public class MedicalAidServiceImplTest {
     @Order(5)
     @Test
     public void e_delete() {
-        boolean deleted = service.delete(medicalAid.getUserId());
+        boolean deleted = service.delete(medicalAid.getMedicalAidId());
                 Assert.assertTrue(deleted);
 
         if (deleted)
