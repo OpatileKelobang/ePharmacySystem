@@ -5,6 +5,7 @@ package com.digital.epharmacy.entity.Pharmacy;
  * Date: 04 July 2020
  */
 
+import com.digital.epharmacy.entity.User.Address;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
@@ -24,6 +25,9 @@ public class Pharmacy {
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private Set<PharmacyBankAccountInformation> bankAccount;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Address> address;
 
     protected Pharmacy(){}
 

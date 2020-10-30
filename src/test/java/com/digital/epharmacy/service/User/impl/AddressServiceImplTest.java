@@ -72,7 +72,9 @@ public class AddressServiceImplTest {
     public void e_delete() {
         boolean deleted = service.delete(address.getAddressId());
         Assert.assertTrue(deleted);
-        System.out.println("User Deleted");
+
+        if (deleted)
+            System.out.println("User Deleted");
     }
 }
 

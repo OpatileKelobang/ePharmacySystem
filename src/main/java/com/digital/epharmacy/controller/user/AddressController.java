@@ -46,8 +46,10 @@ public class AddressController {
     }
 
     @GetMapping("/read/{addressId}")
-    public Address read(@PathVariable String addressId){
-        return addressService.read(addressId);
+    public ResponseEntity<?> readbyAddress(@PathVariable String addressId){
+        Address address = addressService.read(addressId);
+
+        return new ResponseEntity<Address>(address, HttpStatus.OK);
     }
 
     @GetMapping("/name/{streetName}")
@@ -67,9 +69,9 @@ public class AddressController {
         return addressService.getAll();
     }
 
-    @DeleteMapping("/delete/{userId}")
-    public boolean delete(@PathVariable String userId){
-        return addressService.delete(userId);
+    @DeleteMapping("/delete/{addressId}")
+    public boolean delete(@PathVariable String addressId){
+        return addressService.delete(addressId);
     }
 }
 

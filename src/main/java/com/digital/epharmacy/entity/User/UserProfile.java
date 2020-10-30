@@ -2,6 +2,7 @@ package com.digital.epharmacy.entity.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Set;
 
 /*
 * Author: Nicole Hawthorne
@@ -28,6 +29,9 @@ public class UserProfile {
     private String userSurname;
     @NotNull(message = "Gender is required")
     private String gender;
+
+    @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private Set<Address> address;
 
     protected UserProfile(){}
 
