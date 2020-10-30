@@ -2,6 +2,7 @@ package com.digital.epharmacy.entity.User;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Objects;
 import java.util.Set;
 
 /*
@@ -21,7 +22,6 @@ public class UserProfile {
     //naming entity attributes and assigning their variable values
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private String userId;
     @NotNull(message = "Username is required")
     private String userName;
@@ -114,5 +114,18 @@ public class UserProfile {
         public UserProfile build(){
             return new UserProfile(this);
         }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        UserProfile that = (UserProfile) o;
+        return userId.equals(that.userId);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(userId);
     }
 }

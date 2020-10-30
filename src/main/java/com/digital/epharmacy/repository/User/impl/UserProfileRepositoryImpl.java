@@ -1,16 +1,17 @@
-package com.digital.epharmacy.repository.User.impl;
+/*package com.digital.epharmacy.repository.User.impl;
 
 import com.digital.epharmacy.entity.User.UserProfile;
 import com.digital.epharmacy.repository.User.UserProfileRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.HashSet;
-import java.util.Set;
+import java.util.Set;*/
 
 /** Author: Nicole Hawthorne 217169104
  * Date: 28/08/2020
  * Description: UserProfile Repository to create, delete and update a user profile
  */
+/*
 @Repository
 public class UserProfileRepositoryImpl implements UserProfileRepository {
    private static UserProfileRepository repository = null;
@@ -67,3 +68,4 @@ public class UserProfileRepositoryImpl implements UserProfileRepository {
     }
 }
 
+*/

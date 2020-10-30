@@ -14,6 +14,7 @@ import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runners.MethodSorters;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.Set;
 
@@ -23,7 +24,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class UserProfileServiceImplTest {
 
-private static UserProfileService service = UserProfileServiceImpl.getService();
+@Autowired
+private UserProfileService service;
 private static UserProfile userProfile = UserProfileFactory.createUserProfile("Nicole","Hawthorne","M");
     @Order(4)
     @Test

@@ -1,9 +1,10 @@
-package com.digital.epharmacy.repository.User.impl;
+/*package com.digital.epharmacy.repository.User.impl;*/
 /*
 * Author: Nicole Hawthorne
 * Date: 30/08/2020
 * Desc: UserProfileRepository Test, will test all methods if it does it correctly
 * */
+/*
 import com.digital.epharmacy.entity.User.UserProfile;
 import com.digital.epharmacy.factory.User.UserProfileFactory;
 import com.digital.epharmacy.repository.User.UserProfileRepository;
@@ -70,4 +71,4 @@ public class UserProfileRepositoryImplTest {
     assertEquals(1, userProfile.size());
         System.out.println(repository.getAll());
     }
-}
+}*/
